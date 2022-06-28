@@ -108,6 +108,13 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: 'All Patients',
+          headerLeft: () => <LogoTitle />,
+          headerStyle: {backgroundColor: '#27346F'},
+          headerTitleStyle: {
+            color: '#fff',
+            fontSize: 30,
+            fontFamily: 'Poppins', 
+          },
           tabBarIcon: ({ color }) => <TabBarIcon name="hospital-o" color={color} />,
         }}
       />
@@ -116,6 +123,13 @@ function BottomTabNavigator() {
         component={TabThreeScreen}
         options={{
           title: 'Settings',
+          headerLeft: () => <LogoTitle />,
+          headerStyle: {backgroundColor: '#27346F'},
+          headerTitleStyle: {
+            color: '#fff',
+            fontSize: 30,
+            fontFamily: 'Poppins', 
+          },
           tabBarIcon: ({ color }) => <TabBarIcon name="gear" color={color} />,
         }}
       />
