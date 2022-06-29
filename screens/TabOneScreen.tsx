@@ -3,6 +3,8 @@ import {useState, useEffect} from 'react';
 import { Card, Text } from "@rneui/themed";
 import {View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import Patient from '../views/patient';
+import styles from '../styles/defaultstyles';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   const [data, setData] = useState(['Loading...']);
@@ -36,8 +38,8 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
         {/* <Text style={styles.title}>Bed Status</Text> */}
         <Text h2>Bed Status</Text>
         <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-        <Image source={require('../assets/images/sensor.png')} style={styles.image} />
-        <View style={styles.toggles}>
+        {/* <Image source={require('../assets/images/sensor.png')} style={styles.image} /> */}
+        {/* <View style={styles.toggles}>
           <Switch
             trackColor={{ false: "#767577", true: "#5DADEC" }}
             thumbColor={switchOne ? "#f4f3f4" : "#f4f3f4"}
@@ -53,7 +55,8 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
             accessibilityLabel="Get Bed Status"
           />
           <View style={styles.separator}/>
-        </View>
+        </View> */}
+        <Patient data={data}/>
         <View style={styles.mid}>
           <Card containerStyle={{width: Dimensions.get('window').width/3}}>
             <Card.Title>Massage</Card.Title>
@@ -70,7 +73,6 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           <Card containerStyle={{width: Dimensions.get('window').width/3}}>
             <Card.Title>Bed Response</Card.Title>
             <Card.Divider />
-            {/* <Text h3>{data}</Text> */}
             <Text h5>{data[0].title===null?'Loading':data[0].title}</Text>
           </Card>
         </View>
@@ -88,51 +90,51 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    borderWidth: 1,
-    // justifyContent: 'space-between',
-    margin: 10,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 3,
-    height: 0.5,
-    width: '80%',
-  },
-  lgseparator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-  toggles:{
-    alignSelf: 'flex-end',
-    padding: 10,
-  },
-  image: {
-    width: Dimensions.get('window').width/3,
-    height: undefined,
-    aspectRatio: 1.5,
-    resizeMode: 'contain',
-  },
-  mid:{
-    flexDirection: 'row',
-    alignSelf: 'center',
-  },
-  item:{
-    // width: '50%',
-    borderColor: '#000',
-    borderWidth: 1,
-    margin: 10,
-    padding: 10,
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     alignItems: 'center',
+//     borderWidth: 1,
+//     // justifyContent: 'space-between',
+//     margin: 10,
+//   },
+//   title: {
+//     fontSize: 20,
+//     fontWeight: 'bold',
+//   },
+//   separator: {
+//     marginVertical: 3,
+//     height: 0.5,
+//     width: '80%',
+//   },
+//   lgseparator: {
+//     marginVertical: 30,
+//     height: 1,
+//     width: '80%',
+//   },
+//   toggles:{
+//     alignSelf: 'flex-end',
+//     padding: 10,
+//   },
+//   image: {
+//     width: Dimensions.get('window').width/3,
+//     height: undefined,
+//     aspectRatio: 1.5,
+//     resizeMode: 'contain',
+//   },
+//   mid:{
+//     flexDirection: 'row',
+//     alignSelf: 'center',
+//   },
+//   item:{
+//     // width: '50%',
+//     borderColor: '#000',
+//     borderWidth: 1,
+//     margin: 10,
+//     padding: 10,
 
-  },
-  i:{
-    width: '40%',
-  }
-});
+//   },
+//   i:{
+//     width: '40%',
+//   }
+// });
