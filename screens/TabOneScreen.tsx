@@ -4,6 +4,7 @@ import { Card, Text } from "@rneui/themed";
 import {View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import Patient from '../views/patient';
+import RiskSummary from '../views/risksummary';
 import styles from '../styles/defaultstyles';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
@@ -56,7 +57,8 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           />
           <View style={styles.separator}/>
         </View> */}
-        <Patient data={data}/>
+        <Patient/>
+        <RiskSummary/>
         <View style={styles.mid}>
           <Card containerStyle={{width: Dimensions.get('window').width/3}}>
             <Card.Title>Massage</Card.Title>

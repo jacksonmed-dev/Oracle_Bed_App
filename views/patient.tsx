@@ -1,9 +1,9 @@
 import {View } from '../components/Themed';
 import {StyleSheet, Dimensions} from 'react-native';
-import styles from '../styles/defaultstyles';
 import { Card, Text } from "@rneui/themed";
 import Patients from '../testdata/patients';
 import { Avatar } from '@rneui/themed';
+import styles from '../styles/defaultstyles';
 
 
 // type data = {
@@ -15,7 +15,7 @@ const Patient: React.FC = () => {
     const data=Patients[0];
     console.log(data.avatar);
     return(
-        <View style={styles2.container}>
+        <View>
                 <Card containerStyle={{width: Dimensions.get('window').width/3}}>
                 <Card.Title>Patient</Card.Title>
                 <Card.Divider />
