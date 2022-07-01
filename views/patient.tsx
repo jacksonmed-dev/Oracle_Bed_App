@@ -39,7 +39,7 @@ const Patient: React.FC = () => {
 const styles2 = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirections: 'row',
+        flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'flex-start',
     },
