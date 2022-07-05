@@ -1,9 +1,9 @@
 import {View} from '../components/Themed';
-import styles from '../styles/defaultstyles';
-import {Card, Text} from '@rneui/themed';
+import {Card} from '@rneui/themed';
 import {Dimensions} from 'react-native';
 import { ListItem } from 'react-native-elements';
 
+//Fake data for testing
 const data = [
   {
     perception: 3,
@@ -15,6 +15,12 @@ const data = [
   }
 ]
 
+/*
+*   Risk Summary: Shows the Braden Scale for Predicting Pressure Sore Risk
+*   Currently just shows the number for each category.
+*   Need to add functionality to show the actual description. 
+*/
+
 const RiskSummary: React.FC<{}> = () => {
   return (
     <View>
@@ -23,7 +29,7 @@ const RiskSummary: React.FC<{}> = () => {
         <Card.Divider />
         {
           data.map((item, index) => (
-            <ListItem key={index} >
+            <ListItem key={index} hasTVPreferredFocus={undefined} tvParallaxProperties={undefined} >
               <ListItem.Content>
                 <ListItem.Title>Sensor Perception: {item.perception}</ListItem.Title>
                 <ListItem.Title>Moisture: {item.moisture}</ListItem.Title>

@@ -1,9 +1,17 @@
 import {View} from '../components/Themed';
-import styles from '../styles/defaultstyles';
-import {Card, Text} from '@rneui/themed';
-import {Dimensions, StyleSheet, Button} from 'react-native';
-import { ListItem } from 'react-native-elements';
+import {Card} from '@rneui/themed';
+import {Dimensions, Button} from 'react-native';
 
+
+
+/**
+ *   Bed View: Shows the current status of 20 cells in the bed.
+ *   The cells are colored based on the current status of the cell.
+ *    - Green: No Issues
+ *    - Yellow: Warning
+ *    - Red: Danger
+ *   Need to add functionality to control each cell.
+ */
 const Bed: React.FC = () => {
     return(
         <View>

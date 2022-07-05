@@ -1,11 +1,15 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
+/*
+*   This is the default stylesheet for the application.
+*   
+*/
+
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
       borderWidth: 1,
-      // justifyContent: 'space-between',
       margin: 10,
     },
     title: {
@@ -37,7 +41,6 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
     },
     item:{
-      // width: '50%',
       borderColor: '#000',
       borderWidth: 1,
       margin: 10,
