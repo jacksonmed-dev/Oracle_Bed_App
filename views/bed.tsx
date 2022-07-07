@@ -20,7 +20,7 @@ const handlePress = (index: number) => {
 const Bed: React.FC = () => {
     return(
         <View>
-            <Card containerStyle={{width: Dimensions.get('window').width/3}}>
+            <Card containerStyle={{width: Dimensions.get('window').width/6}}>
             <Card.Title>Sensors</Card.Title>
             <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
                 <View>
@@ -86,10 +86,8 @@ const Bed: React.FC = () => {
 
 const specialStyle = StyleSheet.create({
     image: {
-        width: Dimensions.get('window').width/4,
-        height: undefined,
-        aspectRatio: 1,
-        resizeMode: 'contain',
+        height: 400,
+        width: 200,
     }
 });
 
