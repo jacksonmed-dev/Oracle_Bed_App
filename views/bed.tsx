@@ -1,6 +1,7 @@
 import {View} from '../components/Themed';
 import {Card} from '@rneui/themed';
-import {Dimensions, Button, Alert, Image, StyleSheet} from 'react-native';
+import {Dimensions, Button, Alert, Image, StyleSheet, ColorValue} from 'react-native';
+import { useState } from 'react';
 
 
 
@@ -12,12 +13,17 @@ import {Dimensions, Button, Alert, Image, StyleSheet} from 'react-native';
  *    - Red: Danger
  *   Need to add functionality to control each cell.
  */
-
-const handlePress = (index: number) => {
-    Alert.alert('Cell '+index, 'Button pressed');
-}
-
 const Bed: React.FC = () => {
+
+    //TESTING PURPOSES ONLY ------------------------------------------------------------
+    //Will need to replace this with a better system to hold all 20 states of the bed
+    const [isActive, setIsActive] = useState(false);
+
+    const handlePress = () => {
+        setIsActive(!isActive);
+    }
+    //---------------------------------------------------------------------------------
+    
     return(
         <View>
             <Card containerStyle={{width: Dimensions.get('window').width/6}}>
@@ -29,8 +35,8 @@ const Bed: React.FC = () => {
                 <View>
                 <Button
                     title="Cell 1"
-                    color="#265828"
-                    onPress={() => handlePress(1)}
+                    color={isActive ? '#265828' : '#FFDA00'}
+                    onPress={() => handlePress()}
                 />
                 <Button
                     title="Cell 2"
@@ -88,7 +94,10 @@ const specialStyle = StyleSheet.create({
     image: {
         height: 400,
         width: 200,
-    }
+    },
+    normal: {
+        color: '#265828',
+    },
 });
 
 export default Bed;
