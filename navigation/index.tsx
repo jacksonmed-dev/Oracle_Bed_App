@@ -82,7 +82,7 @@ function BottomTabNavigator() {
           headerTitleStyle: {
             color: '#fff',
             fontSize: 30,
-            fontFamily: 'Poppins', 
+            // fontFamily: 'Poppins', 
           },
           tabBarIcon: ({ color }) => <TabBarIcon name="bed" color={color} />,
           headerRight: () => (

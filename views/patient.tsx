@@ -1,8 +1,6 @@
 import {View } from '../components/Themed';
-import {Dimensions} from 'react-native';
-import { Card, Text } from "@rneui/themed";
+import { Card, Text, Avatar } from "@rneui/themed"; //React Native Elements
 import Patients from '../testdata/patients';
-import { Avatar } from '@rneui/themed';
 
 /*
 *   View for the basic patient information.
@@ -15,23 +13,31 @@ import { Avatar } from '@rneui/themed';
 */
 
 const Patient: React.FC = () => {
-    const data=Patients[0];
-    console.log(data.avatar);
+     //TESTING PURPOSES ONLY ------------------------------------------------------------
+    const randomNum=Math.floor(Math.random() * 5);
+    const data=Patients[randomNum];
+    //----------------------------------------------------------------------------------
+    
+    console.log(data.avatar);//Currently a hack to get the avatar to show during initial load. Will need to fix later.
     return(
-        <View>
-                <Card containerStyle={{width: Dimensions.get('window').width/3}}>
-                <Card.Title>Patient</Card.Title>
-                <Card.Divider />
-                <Text h4>{data.name}</Text>
-                <Text>Age: {data.age}</Text>
-                <Text>Sex: {data.sex}</Text>
-                <Text>Weight: {data.weight} lbs</Text>
-                <Avatar
-                    containerStyle={{justifyContent: 'flex-end'}}
-                    size={64}
-                    rounded
-                    source={data.avatar?{uri:data.avatar}:{}}
-                />
+        <View style={{width:'90%'}}>
+            <Card>
+                <View style={{flexDirection:'row'}}>
+                    <View style={{padding: 5}}>
+                        <Avatar
+                            containerStyle={{justifyContent: 'flex-end'}}
+                            size={64}
+                            rounded
+                            source={data.avatar?{uri:data.avatar}:{}}
+                        />
+                    </View>
+                    <View>
+                        <Card.Title>{data.name}</Card.Title>
+                        <Text>Age: {data.age}</Text>
+                        <Text>Sex: {data.sex}</Text>
+                        <Text>Weight: {data.weight} lbs</Text>
+                    </View>
+                </View>
             </Card>
         </View>
     );

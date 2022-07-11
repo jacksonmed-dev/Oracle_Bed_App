@@ -6,6 +6,13 @@ import {StyleSheet, Dimensions} from 'react-native';
 */
 
 const styles = StyleSheet.create({
+    // This is the style for the separator between components.
+    separator: {
+      marginVertical: 3,    // This is the space between the components.
+      height: 1,            // This is the height of the line
+      width: '80%',         // This is the width of the line
+      alignSelf: 'center',  // This is the alignment of the line.
+    },
     container: {
       flex: 1,
       alignItems: 'center',
@@ -15,11 +22,6 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 20,
       fontWeight: 'bold',
-    },
-    separator: {
-      marginVertical: 3,
-      height: 0.5,
-      width: '80%',
     },
     lgseparator: {
       marginVertical: 30,

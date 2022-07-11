@@ -1,7 +1,12 @@
 import {View} from '../components/Themed';
-import {Card} from '@rneui/themed';
-import {Dimensions} from 'react-native';
-import { ListItem } from 'react-native-elements';
+import {useState} from 'react';
+import {Card, ListItem, Text} from '@rneui/themed'; //React Native Elements
+
+/*
+*  View for the risk summary
+*  Based on Braden Scale for Predicting Pressure Sore Risk
+*  https://www.ahrq.gov/patient-safety/settings/hospital/resource/pressureulcer/tool/pu7b.html#:~:text=The%20scale%20consists%20of%20six,less%20indicates%20at%2Drisk%20status
+*/
 
 //Fake data for testing
 const data = [
@@ -15,6 +20,8 @@ const data = [
   }
 ]
 
+//Functions to convert the numerical data from the server into text
+//Todo: Move these to a separate file
 const perception=(num:number)=>{
   switch(num){
     case 1:
@@ -95,20 +102,33 @@ const friction=(num:number)=>{
 
 /*
 *   Risk Summary: Shows the Braden Scale for Predicting Pressure Sore Risk
-*   Currently just shows the number for each category.
-*   Need to add functionality to show the actual description. 
 */
 
+
+
 const RiskSummary: React.FC<{}> = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <View>
-      <Card containerStyle={{width: Dimensions.get('window').width/3}}>
-        <Card.Title>Risk Summary</Card.Title>
-        <Card.Divider />
+    <View style={{width:'90%'}}>
+      <Card>
+        <ListItem.Accordion
+        content={
+          <View>              
+            <Card.Title>Risk Summary</Card.Title>
+            <Text>Click to Expand</Text>
+          </View>
+        }
+        noIcon={true}
+        isExpanded={expanded}
+        onPress={() => {
+          setExpanded(!expanded);
+        }}
+        >
         {
           data.map((item, index) => (
             <ListItem key={index} hasTVPreferredFocus={undefined} tvParallaxProperties={undefined} >
-              <ListItem.Content>
+              <ListItem.Content style={{margin:-10}}>
                 <ListItem.Title>Sensor Perception: {perception(item.perception)}</ListItem.Title>
                 <ListItem.Title>Moisture: {moisture(item.moisture)}</ListItem.Title>
                 <ListItem.Title>Activity: {activity(item.activity)}</ListItem.Title>
@@ -119,6 +139,7 @@ const RiskSummary: React.FC<{}> = () => {
             </ListItem>
           ))
         }
+        </ListItem.Accordion>
       </Card>
     </View>
   );

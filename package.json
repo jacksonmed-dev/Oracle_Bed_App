@@ -14,7 +14,10 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@expo/vector-icons": "^12.0.0",
+    "@mui/material": "^5.8.7",
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
