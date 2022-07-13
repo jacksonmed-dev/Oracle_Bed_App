@@ -4,6 +4,7 @@ import { RootTabScreenProps } from '../types';
 import Patient from '../views/patient';
 import Bed from '../views/bed';
 import RiskSummary from '../views/risksummary';
+import AutoFunctions from '../views/autofunctions';
 
 /**
  *  PatientScreen: Currently the main screen for the App.
@@ -16,6 +17,7 @@ export default function PatientScreen({ navigation }: RootTabScreenProps<'TabOne
         <Patient/>
         <RiskSummary/>
         <Bed/>
+        <AutoFunctions/>
       </View>
     </ScrollView>
   );
