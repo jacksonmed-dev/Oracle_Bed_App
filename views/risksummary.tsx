@@ -111,39 +111,37 @@ const RiskSummary: React.FC<{}> = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <View style={{width:'90%'}}>
-      <Card>
-        <ListItem.Accordion
-          containerStyle={{margin:0, padding:0}}
-          content={
-            <View>              
-              <Card.Title>Risk Summary</Card.Title>
-              <Text>Click to Expand</Text>
-            </View>
-          }
-          noIcon={true}
-          isExpanded={expanded}
-          onPress={() => {
-            setExpanded(!expanded);
-          }}
-          >
-          {
-            data.map((item, index) => (
-              <ListItem key={index} hasTVPreferredFocus={undefined} tvParallaxProperties={undefined} >
-                <ListItem.Content style={{margin:-10}}>
-                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Sensor Perception: </Text></View><Text>{perception(item.perception)}</Text></ListItem>
-                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Moisture: </Text></View><Text>{moisture(item.moisture)}</Text></ListItem>
-                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Activity: </Text></View><Text>{activity(item.activity)}</Text></ListItem>
-                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Mobility: </Text></View><Text>{mobility(item.mobility)}</Text></ListItem>
-                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Nutrition: </Text></View><Text>{nutrition(item.nutrition)}</Text></ListItem>
-                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Sensor Friction: </Text></View><Text>{friction(item.friction)}</Text></ListItem>
-                </ListItem.Content>
-              </ListItem>
-            ))
-          }
-        </ListItem.Accordion>
-      </Card>
-    </View>
+    <Card>
+      <ListItem.Accordion
+        containerStyle={{margin:0, padding:0}}
+        content={
+          <View>              
+            <Card.Title>Risk Summary</Card.Title>
+            <Text>Click to Expand</Text>
+          </View>
+        }
+        noIcon={true}
+        isExpanded={expanded}
+        onPress={() => {
+          setExpanded(!expanded);
+        }}
+        >
+        {
+          data.map((item, index) => (
+            <ListItem key={index} hasTVPreferredFocus={undefined} tvParallaxProperties={undefined} >
+              <ListItem.Content style={{margin:-10}}>
+                <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Sensor Perception: </Text></View><Text>{perception(item.perception)}</Text></ListItem>
+                <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Moisture: </Text></View><Text>{moisture(item.moisture)}</Text></ListItem>
+                <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Activity: </Text></View><Text>{activity(item.activity)}</Text></ListItem>
+                <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Mobility: </Text></View><Text>{mobility(item.mobility)}</Text></ListItem>
+                <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Nutrition: </Text></View><Text>{nutrition(item.nutrition)}</Text></ListItem>
+                <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Sensor Friction: </Text></View><Text>{friction(item.friction)}</Text></ListItem>
+              </ListItem.Content>
+            </ListItem>
+          ))
+        }
+      </ListItem.Accordion>
+    </Card>
   );
 }
 

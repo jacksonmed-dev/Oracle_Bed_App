@@ -16,117 +16,115 @@ import {Image, StyleSheet} from 'react-native';
 const Bed: React.FC = () => {
 
     return(
-        <View style={{width:'90%'}}>
-            <Card>
-                <View style={{flexDirection: 'row', flexWrap: 'nowrap'}}>
-                    <View style={{flexDirection: 'column', flexWrap: 'nowrap'}}>
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.warning}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.warning}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.danger}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.warning}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.danger}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                        <Button
-                            buttonStyle={specialStyle.button}
-                            containerStyle={specialStyle.buttonContainer}
-                            onPress={() => alert('Button Pressed')}
-                        />
-                    </View>
-                    <View>
-                        <Image source={require('../assets/images/body.png')} style={specialStyle.image}/>
-                    </View>
+        <Card containerStyle={{alignItems:'center'}}>
+            <View style={{flexDirection: 'row', flexWrap: 'nowrap'}}>
+                <View style={{flexDirection: 'column', flexWrap: 'nowrap'}}>
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.warning}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.warning}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.danger}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.warning}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.danger}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
+                    <Button
+                        buttonStyle={specialStyle.button}
+                        containerStyle={specialStyle.buttonContainer}
+                        onPress={() => alert('Button Pressed')}
+                    />
                 </View>
-            </Card>
-        </View>
+                <View>
+                    <Image source={require('../assets/images/body.png')} style={specialStyle.image}/>
+                </View>
+            </View>
+        </Card>
     );
 }
 

@@ -20,26 +20,24 @@ const Patient: React.FC = () => {
     
     console.log(data.avatar);//Currently a hack to get the avatar to show during initial load. Will need to fix later.
     return(
-        <View style={{width:'90%'}}>
-            <Card>
-                <View style={{flexDirection:'row'}}>
-                    <View style={{padding: 5}}>
-                        <Avatar
-                            containerStyle={{justifyContent: 'flex-end'}}
-                            size={64}
-                            rounded
-                            source={data.avatar?{uri:data.avatar}:{}}
-                        />
-                    </View>
-                    <View>
-                        <Card.Title>{data.name}</Card.Title>
-                        <Text>Age: {data.age}</Text>
-                        <Text>Sex: {data.sex}</Text>
-                        <Text>Weight: {data.weight} lbs</Text>
-                    </View>
+        <Card containerStyle={{width:'60%'}}>
+            <View style={{flexDirection:'row'}}>
+                <View style={{padding: 5}}>
+                    <Avatar
+                        containerStyle={{justifyContent: 'flex-end'}}
+                        size={64}
+                        rounded
+                        source={data.avatar?{uri:data.avatar}:{}}
+                    />
                 </View>
-            </Card>
-        </View>
+                <View>
+                    <Card.Title>{data.name}</Card.Title>
+                    <Text>Age: {data.age}</Text>
+                    <Text>Sex: {data.sex}</Text>
+                    <Text>Weight: {data.weight} lbs</Text>
+                </View>
+            </View>
+        </Card>
     );
 }
 
