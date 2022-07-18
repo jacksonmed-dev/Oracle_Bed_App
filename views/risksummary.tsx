@@ -1,6 +1,7 @@
 import {View} from '../components/Themed';
 import {useState} from 'react';
 import {Card, ListItem, Text} from '@rneui/themed'; //React Native Elements
+import { StyleSheet } from 'react-native';
 
 /*
 *  View for the risk summary
@@ -16,7 +17,7 @@ const data = [
     activity: 2,
     mobility: 4,
     nutrition: 1,
-    friction: 0,
+    friction: 1,
   }
 ]
 
@@ -113,36 +114,49 @@ const RiskSummary: React.FC<{}> = () => {
     <View style={{width:'90%'}}>
       <Card>
         <ListItem.Accordion
-        content={
-          <View>              
-            <Card.Title>Risk Summary</Card.Title>
-            <Text>Click to Expand</Text>
-          </View>
-        }
-        noIcon={true}
-        isExpanded={expanded}
-        onPress={() => {
-          setExpanded(!expanded);
-        }}
-        >
-        {
-          data.map((item, index) => (
-            <ListItem key={index} hasTVPreferredFocus={undefined} tvParallaxProperties={undefined} >
-              <ListItem.Content style={{margin:-10}}>
-                <ListItem.Title>Sensor Perception: {perception(item.perception)}</ListItem.Title>
-                <ListItem.Title>Moisture: {moisture(item.moisture)}</ListItem.Title>
-                <ListItem.Title>Activity: {activity(item.activity)}</ListItem.Title>
-                <ListItem.Title>Mobility: {mobility(item.mobility)}</ListItem.Title>
-                <ListItem.Title>Nutrition: {nutrition(item.nutrition)}</ListItem.Title>
-                <ListItem.Title>Sensor Friction: {friction(item.friction)}</ListItem.Title>
-              </ListItem.Content>
-            </ListItem>
-          ))
-        }
+          containerStyle={{margin:0, padding:0}}
+          content={
+            <View>              
+              <Card.Title>Risk Summary</Card.Title>
+              <Text>Click to Expand</Text>
+            </View>
+          }
+          noIcon={true}
+          isExpanded={expanded}
+          onPress={() => {
+            setExpanded(!expanded);
+          }}
+          >
+          {
+            data.map((item, index) => (
+              <ListItem key={index} hasTVPreferredFocus={undefined} tvParallaxProperties={undefined} >
+                <ListItem.Content style={{margin:-10}}>
+                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Sensor Perception: </Text></View><Text>{perception(item.perception)}</Text></ListItem>
+                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Moisture: </Text></View><Text>{moisture(item.moisture)}</Text></ListItem>
+                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Activity: </Text></View><Text>{activity(item.activity)}</Text></ListItem>
+                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Mobility: </Text></View><Text>{mobility(item.mobility)}</Text></ListItem>
+                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Nutrition: </Text></View><Text>{nutrition(item.nutrition)}</Text></ListItem>
+                  <ListItem><View style={{ justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', flex: 1}}><Text>Sensor Friction: </Text></View><Text>{friction(item.friction)}</Text></ListItem>
+                </ListItem.Content>
+              </ListItem>
+            ))
+          }
         </ListItem.Accordion>
       </Card>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start' // if you want to fill rows left to right
+  },
+  item: {
+    width: '50%' // is 50% of container width
+  }
+})
 
 export default RiskSummary;
