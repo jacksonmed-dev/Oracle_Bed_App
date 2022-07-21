@@ -2,8 +2,7 @@ import {View} from '../components/Themed';
 import {Card} from '@rneui/themed';
 import {Button} from '@rneui/base';
 import {Image, StyleSheet} from 'react-native';
-
-
+import { useState } from 'react';
 
 /**
  *   Bed View: Shows the current status of 20 cells in the bed.
@@ -15,6 +14,13 @@ import {Image, StyleSheet} from 'react-native';
  */
 const Bed: React.FC = () => {
 
+    /* FOR TESTING ONLY */
+    const [testActive, setTestActive] = useState(false);
+    const handlePress = () => {
+        setTestActive(!testActive);
+    }
+    /* END TESTING ONLY */
+
     return(
         <Card containerStyle={{alignItems:'center'}}>
             <View style={{flexDirection: 'row', flexWrap: 'nowrap'}}>
@@ -25,19 +31,19 @@ const Bed: React.FC = () => {
                         onPress={() => alert('Button Pressed')}
                     />
                     <Button
-                        buttonStyle={specialStyle.warning}
+                        buttonStyle={testActive?specialStyle.button:specialStyle.warning}
                         containerStyle={specialStyle.buttonContainer}
-                        onPress={() => alert('Button Pressed')}
+                        onPress={() => handlePress()}
                     />
                     <Button
-                        buttonStyle={specialStyle.button}
+                        buttonStyle={testActive?specialStyle.button:specialStyle.danger}
                         containerStyle={specialStyle.buttonContainer}
-                        onPress={() => alert('Button Pressed')}
+                        onPress={() => handlePress()}
                     />
                     <Button
-                        buttonStyle={specialStyle.warning}
+                        buttonStyle={testActive?specialStyle.button:specialStyle.warning}
                         containerStyle={specialStyle.buttonContainer}
-                        onPress={() => alert('Button Pressed')}
+                        onPress={() => handlePress()}
                     />
                     <Button
                         buttonStyle={specialStyle.button}

@@ -16,7 +16,7 @@ export default function PatientScreen({ navigation }: RootTabScreenProps<'TabOne
     <ScrollView>
       <View style={{alignItems:'center'}}>
         {/* <View style={w<1000?{width:'90%'}:{width:'40%'}}> */}
-          <View style={w<1000?{width:'90%'}:{flexDirection:'row', width:'30%'}}>
+          <View style={w<500?{width:'90%'}:{flexDirection:'row', width:'50%'}}>
             <Patient />
             <AutoFunctions/>
           </View>
