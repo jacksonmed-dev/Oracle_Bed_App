@@ -3,11 +3,20 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import AutoFunctions from '../views/autofunctions';
+import { Button } from 'react-native-elements';
 
 
 export default function TabThreeScreen() {
   return (
-    <AutoFunctions />
+    <View>
+      <Text>Hello World</Text>
+      <Button 
+        title="Scan"
+        onPress={() => {
+          console.log("Scanning");
+        }}
+      />
+    </View>
   );
 }
 
